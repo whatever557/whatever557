@@ -3,25 +3,25 @@
 #include <stdlib.h>
 #include <string.h>
 
-/* 상수 정의 */
-#define Nb 4 // AES 블록 크기(word)
-#define Nk 4 // AES 키 길이(word)
-#define Nr 10 // AES 라운드 수 (128비트 키 사용시 10 라운드)
-/* 타입 정의 */
+/* 상수 정의 Definition of constants*/
+#define Nb 4 // AES 블록 크기AES block size (word)
+#define Nk 4 // AES 키 길이AES key length (word)
+#define Nr 10 // AES 라운드 수 AES round count (128비트 키 사용시 10 라운드)
+/* 타입 정의 Type definition */
 typedef unsigned int WORD;
 typedef unsigned char BYTE;
-/* 매크로 함수 */
-#define HIHEX(x) (x >> 4)    // 8bit에서 상위 4bit 값을 구하는 함수
-#define LOWHEX(x) (x & 0x0F) // 8bit에서 하위 4bit 값을 구하는 함수
-// BYTE를 WORD로 변환하는 함수
+/* 매크로 함수 Macro function */
+#define HIHEX(x) (x >> 4)    // 8bit에서 상위 4bit 값을 구하는 함수 Function to find the upper 4 bit values ​​in 8 bits
+#define LOWHEX(x) (x & 0x0F) // 8bit에서 하위 4bit 값을 구하는 함수 Function to find the lower 4 bit value from 8 bit
+// BYTE를 WORD로 변환하는 함수 Function to convert BYTE to WORD
 #define BTOW(b0, b1, b2, b3)                                                   \
   (((WORD)b0 << 24) | ((WORD)b1 << 16) | ((WORD)b2 << 8) | (WORD)b3)
 
-void KeyExpansion(BYTE *key, WORD *W); // AES 키 확장 함수
+void KeyExpansion(BYTE *key, WORD *W); // AES 키 확장 함수 AES Key Extension Function
 WORD SubWord(WORD W);                  // SubWord
 WORD RotWord(WORD W);                  // RotWord
 
-// S-box 상수
+// S-box 상수 S-box constant
 BYTE S_box[16][16] = {
     99,  124, 119, 123, 242, 107, 111, 197, 48,  1,   103, 43,  254, 215, 171,
     118, 202, 130, 201, 125, 250, 89,  71,  240, 173, 212, 162, 175, 156, 164,
@@ -43,12 +43,12 @@ BYTE S_box[16][16] = {
     22,
 };
 
-// Rcon 상수
+// Rcon 상수 Rcon constant
 static WORD Rcon[11] = {0x01000000, 0x02000000, 0x04000000, 0x08000000,
                         0x10000000, 0x20000000, 0x40000000, 0x80000000,
                         0x1b000000, 0x36000000};
 
-// RotWord (32bit word를 8bit 왼쪽 로테이트)
+// RotWord (32bit word를 8bit 왼쪽 로테이트 Rotate 32bit word to 8bit left)
 WORD RotWord(WORD W) {
     return ((W & 0xFF000000) >> 24) | (W << 8);
 }
@@ -66,7 +66,7 @@ WORD SubWord(WORD W) {
     return out;
 }
 
-// 키 확장 함수
+// 키 확장 함수 Key expansion function
 void KeyExpansion(BYTE *key, WORD *W) {
     WORD temp;
     int i = 0;
@@ -84,7 +84,7 @@ void KeyExpansion(BYTE *key, WORD *W) {
     }
 }
 
-// 확장된 키 출력
+// 확장된 키 출력 Extended Key Output
 void printExpandedKey(WORD *W) {
     int i;
 
@@ -95,25 +95,25 @@ void printExpandedKey(WORD *W) {
 
 int main() {
     BYTE key[Nk*4+1] = {0,};
-    WORD W[Nb * (Nr + 1)]; // 확장된 키를 저장할 배열
+    WORD W[Nb * (Nr + 1)]; // 확장된 키를 저장할 배열 Array to store extended keys
 
-    printf("*비밀 키: ");
+    printf("*Secret Key : ");
     if (fgets((char*)key, sizeof(key), stdin) == NULL) {
-        fprintf(stderr, "키 입력 오류\n");
+        fprintf(stderr, "Key input error\n");
         return 1;
     }
 
-    // fgets로 입력받은 키의 끝에 개행 문자가 포함되어 있을 경우 제거
+    // fgets로 입력받은 키의 끝에 개행 문자가 포함되어 있을 경우 제거 Remove newline character if it is included at the end of key input by fgets
     key[strcspn((char*)key, "\n")] = 0;
 
-    // 키 길이가 16자가 아닌 경우 처리
+    // 키 길이가 16자가 아닌 경우 처리 Handling when key length is not 16 characters
     if (strlen((char*)key) != 16) {
-        fprintf(stderr, "키는 16자여야 합니다.\n");
+        fprintf(stderr, "Key must be 16 characters long.\n");
         return 1;
     }
 
-    KeyExpansion(key, W); // 키 확장
-  printf("* 확장 키: \n");
-    printExpandedKey(W); // 확장된 키 출력
+    KeyExpansion(key, W); // 키 확장 Key extension
+  printf("* Extended Key: \n");
+    printExpandedKey(W); // 확장된 키 출력 Extended Key Output
     return 0;
 }
