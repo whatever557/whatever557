@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GAME INFO</title>
+    <style type="text/css">
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        h3 {
+            font-size: 50px;
+            text-align: center;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px; /* 둥근 모서리 */
+        }
+        #wrap{
+            min-height: 100vh;
+            position: relative;
+            width: 100%;
+            background-color: #f2f2f2
+
+        }
+        footer{
+            width: 100%;
+            height: 110px;
+            bottom: 0px;
+            position: absolute;
+            border-top: 1px solid #c4c4c4;
+            padding-top: 15px;
+            background-color: #CBC9D2;
+            font-size: 12px;
+        }
+        footer p{
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        aside{
+            padding-bottom: 110px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .parent {
+            width: 30%;
+            margin: 10px;
+            overflow: hidden;
+            border-radius: 10px; /* 부모 컨테이너에 border-radius 적용 */
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .child {
+            width: 100%;
+            height: auto;
+            transform: scale(1.0);
+            transition: transform 0.3s;
+        }
+        .parent:hover .child {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h3>GAME INFO</h3>
+    <div id='wrap'>
+        <aside class="container">
+            <div class="parent">
+                <a href="ff16.html">
+                    <img class="child" src="https://blogfiles.pstatic.net/MjAyMzExMjBfMTUx/MDAxNzAwNDcwMDk1ODQx.6yTtO289O96lhYFhV5NdKeZzL-3M6f4UwTRMcQ5C868g.nmWSSNslX-4V0gBPuP3gTtaKJEHdQguiMgK2YrZ5yBMg.JPEG.jsbin8077/KakaoTalk_20231120_174753309.jpg" alt="배너 이미지" title="파이널 판타지">
+                </a>
+            </div>
+            <div class="parent">
+                <a href="genshin.html">
+                    <img class="child" src="https://blogfiles.pstatic.net/MjAyMzExMjFfOTkg/MDAxNzAwNTYzOTY2Mzkx.btE60MpIruUzecEev8lxAIDxPPqFaHeA4fDX9DKmS-Eg.Rme9aT67gYx5jTAVFOop9-Y0hWNxJDWnf4GYG_O8jr4g.JPEG.jsbin8077/genshin.jpg" alt="배너 이미지" title="원신">
+                </a>
+            </div>
+            <div class="parent">
+                <a href="lostark.html">
+                    <img class="child" src="https://isplus.com/data/isp/image/2018/09/18/isphtm_2018091804418724075.jpg" alt="배너 이미지"  title="로스트 아크">
+                </a>
+            </div>
+        </div>
+    </article>
+    <footer>
+        <p>
+            <span>메인 홈페이지/원신 페이지 제작: 20221062 장수빈</span><br>
+            <span>파이널 판타지 페이지 제작: 20191170 빈소진</span><br>
+            <span>로스트 아크 페이지 제작: 20221013 서민형</span>
+        </p>
+    </footer>
+
+    </body>
+</html>

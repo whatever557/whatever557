@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>원신(Genshin Impact)</title>
+
+<style type="text/css">
+    body{
+    margin: 0;
+    padding: 15px;
+}
+header{
+    background-color: rgb(45,114,168);
+    color: #fff;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+h1{text-align: left; color: black; font: sans-serif;}
+ul {
+    list-style-type: decimal;
+    font-weight: bold;
+}
+details{
+    width: ;
+}
+summary{
+    font-size: 22px;
+    font-weight: bold;
+
+}
+article,nav{/*페이지의 내용 부분의 양옆으로 공백*/
+    padding: 0px 150px 0px 150px;
+}
+h3{
+    font-size: 24px;
+}
+table, td, th {/*테이블의 테두리가 1개의 선으로 보이게함*/
+  border : 1px solid black;
+  border-collapse : collapse;
+  text-align: center;
+  font-weight: bold;
+};
+
+.header { /*페이지 상단 헤더*/
+  position: fixed; 
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+/*프로그래스 바 CSS*/
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #c6c6c6;
+}
+
+.progress-bar {
+  width: 0;
+        height: 4px;
+        background-color: #00A2FF; /* 원하는 색상을 지정 */
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        transition: width 0.2s; /* 프로그레스 바 전환 효과를 원하는 시간으로 조정 */
+        
+    }
+
+/* 배너 광고 스타일 */
+        .floating-banner {
+            float: right;
+            margin: 5px; /* 원하는 마진 값 설정 */
+        }
+
+        /* 이미지 스타일 (크기 조정을 위한 예시) */
+        .banner-image {
+            max-width: 100%; /* 이미지 최대 너비 설정 */
+            height: auto;
+        }
+        .close-button {
+            position: absolute; /* 배너에 대해 절대 포지션 */
+            top: 0;
+            right: 0;
+            background-color: #fff; /* 배경색 설정 */
+            padding: 5px 10px; /* 버튼 내부 패딩 설정 */
+            border: 1px solid #ccc; /* 테두리 스타일 설정 */
+            cursor: pointer; /* 커서를 포인터로 변경하여 클릭 가능하도록 함 */
+        }
+        
+        /*목차 제목에 마우스 오버시 밑줄로 강조*/
+        a.underline:hover{
+            text-decoration: underline;
+        }
+</style>
+</head>
+<body>
+    <!--홈페이지로 돌아가는 홈버튼-->
+    <button type=" button" onclick="location.href='home.html'">HOME</button>
+<!-- 오른쪽으로 떠다니는 배너 광고 -->
+    <aside class="floating-banner">
+    <span class="close-button" id="closeBanner">&times;</span>
+    <div class="slideshow-container">
+        <div class="mySlides">
+            <a href="https://genshin.hoyoverse.com/ko">
+                <img class="banner-image" src="https://i.namu.wiki/i/Pi_fhDUWVmrasaRhujF6C51Rg5z9cBRmR9pN2V2jlhTk-IKxCjQbTE8S4eryC1lhSjE5SbtOg7oTWyHux7VSE26fGQT5LRRBVIUmGcqQ2pkgBFNlUwd-jdFhJZt5Z81D-6V-aPChin3cVYxzTvn2jw.webp" alt="배너 광고 이미지" width="90px" height="90px" title="배너 광고">
+            </a>
+        </div>
+        <div class="mySlides">
+            <a href="https://genshin.hoyoverse.com/ko">
+                <img class="banner-image" src="https://blogfiles.pstatic.net/MjAyMzExMjBfMTY4/MDAxNzAwNDY5ODU1Njcx.PAT3-cmgN5sTHYUWeHSsLdPwOAbYy27Xyj_0eHUVhpsg.rvkficOSz59JcX_vrQSJlhgGeTngNrhcZ7BmfX4KxW0g.PNG.jsbin8077/%EC%9B%90%EC%8B%A0_%EB%A1%9C%EA%B3%A0.png" alt="다른 배너 이미지" width="100" height="100" title="배너 광고">
+            </a>
+        </div>
+        <!-- 원하는 만큼 이미지를 추가 -->
+    </div>
+</aside>
+
+
+    <h1>GAME INFO</h1>
+    <header>
+        <h2>원신(Genshin Impact)</h2>
+        <figure>
+            <img width="640" height="360" src="https://i.ytimg.com/vi/bl6ttHXCel4/maxresdefault.jpg">
+        </figure>
+    </header>
+    <nav>
+        <br>
+        <h3>목차</h3>
+        <hr>
+        <ul>
+            <li> <a href="#gameprofile">게임 프로필</a></li>
+            <li> <a href="#gamesynopsis">시놉시스</a></li>
+            <li> <a href="#gameoutline">게임 개요</a></li>
+            <li> <a href="#gamecharacter">등장인물</a></li>
+            <li> <a href="#gamestory">스토리</a></li>
+            <li> <a href="#gameupdate">업데이트 주기</a></li>
+            <li> <a href="#gamemechanism">게임 메커니즘</a></li>
+            <li> <a href="#gamemusic">게임 BGM</a></li>
+        </ul>
+    </nav>
+    <section>
+        <article id="gameprofile">
+            <details open>
+                <summary> <a class='underline'>게임 프로필</a> </summary>
+                <hr>
+                <table border="1" bordercolor="black" width="800" height="350">
+                    <tr> <td bgcolor="#2D72A8"><font color="white">제작사</font></td> <td>HoYoverse</td> </tr>
+                    <tr> <td bgcolor="#2D72A8"><font color="white">출시일</font></td> <td>2020년 9월 28일</td></tr>
+                    <tr> <td bgcolor="#2D72A8"><font color="white">장르</font></td> <td>3인칭 오픈 월드 액션 어드벤처 RPG</td></tr>
+                    <tr> <td bgcolor="#2D72A8"><font color="white">출시 플랫폼</font></td> <td>모바일 | PC | PlayStation | GeForce NOW</td></tr>
+                    <tr> <td bgcolor="#2D72A8"><font color="white">엔진</font></td> <td>Unity | Wwise(사운드)</td> </tr>
+                    <tr> <td bgcolor="#2D72A8"><font color="white">다운로드 플랫폼</font></td> <td><a href="https://apps.apple.com/kr/app/%EC%9B%90%EC%8B%A0-3%EC%A3%BC%EB%85%84/id1517783697" target="_blank">App Store</a> | <a href="https://play.google.com/store/apps/details?id=com.miHoYo.GenshinImpact&pli=1" target="_blank">Google Play</a> | <a href="https://galaxystore.samsung.com/detail/com.miHoYo.GI.samsung" target="_blank">Galaxy Store</a> | <a href="https://www.playstation.com/ko-kr/games/genshin-impact/" target="_blank">Playstation Network</a> | <a href="https://store.epicgames.com/ko/p/genshin-impact" target="_blank">Epic Games Store</a></td></tr>
+                    <tr><td bgcolor="#2D72A8"><font color="white">현재 버전</font><td> 4.2(2023/11/27 기준)</tr>
+                </table>
+            </details>
+        </article>
+        <article id="gamesynopsis">
+            <details open>
+                <summary><a class='underline'>시놉시스</a></summary>
+                <hr>
+                7가지 원소가 살아 숨 쉬는 판타지 세계 티바트.<br>
+                아주 오래전, 사람들은 신령에 대한 신앙을 통해 원소의 힘을 부여 받아 황야를 개척하고 나라를 건설 했다.<br>
+                500년 전 , 오래된 나라가 멸망 후 천지가 개벽하고...<br>
+                대륙을 휩쓸던 재난이 멈췄지만, 사람들이 고대하던 평화는 오지 않았다.
+            </details>
+        </article>
+        <article id="gameoutline">
+            <details open>
+                <summary><a class='underline'>게임 개요</a></summary>
+                <hr>
+                원신은 3인칭 오픈월드 액션 어드벤처 RPG로 불, 물, 바람, 번개, 풀, 얼음 ,바위 총 7개의 원소의 힘을 사용하여 원소반응을 일으켜 적을 처치한다. 오픈월드 탐험과 스토리가 주 컨텐츠이다.
+            </details>
+        </article>
+        <article id="gamecharacter">
+            <details open>
+                <summary><a class='underline'>등장인물</a></summary>
+                <hr>
+                <ul>
+                    <li>주인공일행
+                        <ol>
+                            <li>여행자 남매(아이테르/루미네): 다른 세계에서 건너온 여행자. 신에 의해 가족을 빼앗긴 뒤 일곱 신을 찾는 여정에 오른다.</li>
+                            <li>페이몬: 여행자의 동료로 등장하는 조력자 캐릭터이자, 원신의 마스코트 담당</li>
+                        </ol>
+                    </li>
+                    <li>일곱신
+                        <ol>
+                            <li>바람의 신: 바르바토스</li>
+                            <li>바위의 신: 모락스</li>
+                            <li>번개의 신: 바알</li>
+                            <li>풀의 신: 부에르</li>
+                            <li>물의 신: 포칼로스</li>
+                            <li>불의 신: 미명</li>
+                            <li>얼음의 여왕: 미명</li>
+                        </ol>
+                    </li>
+                </ul>
+
+            </details>
+            
+        </article>
+        <article id="gamestory">
+            <details open>
+                <summary><a class='underline'>스토리</a></summary>
+                <hr>
+                이름모를 신에 의해 이세계로 떨어진 여행자가 잃어버린 쌍둥이 혈육을 찾기위해 7개의 나라를 여행하며 무명의 신의 존재에 대한 단서를 찾아 떠난다.
+            </details>
+        </article>
+        <article id="gameupdate">
+            <details open>
+                <summary><a class='underline'>업데이트 주기</a></summary>
+                <hr>
+                버전 업데이트 주기는 보통 6주를 간격으로 진행되고있으며, 버그 수정 등은 수시로 이루어지고 있다. 자세한 수정 사항은 인게임 공지 또는 공식 네이버 카페에서 확인 가능하다.
+            </details>
+        </article>
+        <article id="gamemechanism">
+            <details open>
+                <summary><a class='underline'>게임 메커니즘</a></summary>
+                <hr>
+                캐릭터의 스킬은 기본적으로 일반공격, 원소스킬, 원소폭발로 이루어져있으며 이들은 캐릭터의 무기, 원소의 힘(신의 눈)에 따라서 달라진다.
+            </details>
+        </article>
+        <article id="gamemusic">
+            <details open>
+                <summary><a class='underline'>게임 BGM</a></summary>
+                <hr>
+                </aside>
+                <aside id="ytplayer"></aside>
+                <script>
+                    /*유튜브 동영상을 페이지에서 재생하기위한 API 사용 코드*/
+                  // Load the IFrame Player API code asynchronously.
+                  var tag = document.createElement('script');
+                  tag.src = "https://www.youtube.com/player_api";
+                  var firstScriptTag = document.getElementsByTagName('script')[0];
+                  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+                  // Replace the 'ytplayer' element with an <iframe> and
+                  // YouTube player after the API code downloads.
+                  var player;
+                  function onYouTubePlayerAPIReady() {
+                    player = new YT.Player('ytplayer', {
+                      height: '180',
+                      width: '320',
+                      videoId: 'DYJfawFkdhs',
+                      autoplay: '1',
+                      mute: '1'
+
+                  });
+                  }
+                </script>
+                </details>
+        </article>
+    </section>
+
+    <!-- 프로그레스 바를 나타내기 위한 요소 추가 -->
+    <aside class="progress-bar" >
+        <script type="text/javascript">
+    ;(function() {
+        'use strict';
+
+        let timerId;
+        const get = (target) => {
+            return document.querySelector(target);
+        }
+        const $progressBar = get('.progress-bar');
+
+        const onScroll = () => {
+            const scrollTop = document.documentElement.scrollTop;
+            console.log(scrollTop);
+
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+            const scrollWidth = (scrollTop / height) * 100;
+            $progressBar.style.width = scrollWidth + '%';
+        }
+
+        window.addEventListener('scroll', onScroll);
+        })();
+        </script>
+    </aside>
+    <script>
+        // 광고 닫기 버튼 클릭 이벤트
+        document.getElementById("closeBanner").addEventListener("click", function() {
+            // 광고를 닫기 위한 동작 추가 (배너 숨김)
+            document.querySelector(".floating-banner").style.display = "none";
+        });
+    </script>
+
+    <!--배너 광고에서 여러 이미지 슬라이드-->
+    <script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        var i;
+        var slides = document.querySelectorAll('.floating-banner .mySlides');
+        
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        
+        slides[slideIndex - 1].style.display = "block";  
+        
+        setTimeout(showSlides, 3000); // 3초마다 이미지 전환
+    }
+</script>
+</body>
+</html>
